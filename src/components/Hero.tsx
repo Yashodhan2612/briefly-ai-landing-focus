@@ -18,7 +18,7 @@ const Hero = () => {
           {/* Platform integration showcase */}
           <div className="mb-16 lg:mb-20">
             <p className="text-center text-sm lg:text-base text-muted-foreground mb-8 animate-fade-in-up">
-              Connect your entire workflow
+              Supercharge your workflow with Briefly.ai
             </p>
             <PlatformLogos />
           </div>
