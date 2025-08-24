@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import slackMockup from "@/assets/slack-mockup.jpg";
+import PlatformLogos from "@/components/PlatformLogos";
 
 const Hero = () => {
   const scrollToWaitlist = () => {
@@ -14,6 +15,14 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20">
         <div className="max-w-7xl mx-auto">
+          {/* Platform integration showcase */}
+          <div className="mb-16 lg:mb-20">
+            <p className="text-center text-sm lg:text-base text-muted-foreground mb-8 animate-fade-in-up">
+              Connect your entire workflow
+            </p>
+            <PlatformLogos />
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left content */}
             <div className="text-left">
