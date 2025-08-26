@@ -4,6 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import type { Database } from "@/integrations/supabase/types";
+type WaitlistInsert = Database["public"]["Tables"]["waitlist_submissions"]["Insert"];
 
 const WaitlistForm = () => {
   const [formData, setFormData] = useState({
@@ -15,20 +18,41 @@ const WaitlistForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  //Handles submissions to the waitlist
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const payload: WaitlistInsert = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company || null,
+        // created_at is usually defaulted by DB, omit unless you need to set it
+      };
+  
+      const { data, error } = await (supabase as any)
+        .from("waitlist_submissions")
+        .insert([payload])
+        .select();
+  
+      if (error) throw error;
     
-    toast({
-      title: "Welcome to the waitlist! 🎉",
-      description: "We'll be in touch soon with early access details.",
-    });
-    
-    setFormData({ name: "", email: "", phone: "", company: "" });
-    setIsSubmitting(false);
+      toast({
+        title: "Welcome to the waitlist! 🎉",
+        description: "We'll be in touch soon with early access details.",
+      });
+      setFormData({ name: "", email: "", phone: "", company: "" });
+    } catch (err: any) {
+      toast({
+        title: "Could not join waitlist",
+        description: err?.message ?? "Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
