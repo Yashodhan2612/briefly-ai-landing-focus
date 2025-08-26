@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import slackMockup from "@/assets/slack-mockup.jpg";
+import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 import PlatformLogos from "@/components/PlatformLogos";
 
 const Hero = () => {
@@ -50,8 +50,8 @@ const Hero = () => {
             <div className="relative lg:block hidden">
               <div className="relative animate-float">
                 <img 
-                  src={slackMockup} 
-                  alt="Slack digest mockup showing automated status updates" 
+                  src={dashboardMockup} 
+                  alt="Briefly.ai dashboard showing automated status updates and team insights" 
                   className="w-full max-w-lg mx-auto rounded-2xl shadow-large"
                 />
                 <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-2xl" />
