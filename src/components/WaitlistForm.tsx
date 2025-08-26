@@ -46,9 +46,13 @@ const WaitlistForm = () => {
       });
       setFormData({ name: "", email: "", phone: "", company: "" });
     } catch (err: any) {
+      const code = err?.code as string | undefined;
+      const message = (err?.message as string | undefined) || "Please try again.";
+      const isDuplicate = code === "23505" || /duplicate key|unique/i.test(message);
+
       toast({
-        title: "Could not join waitlist",
-        description: err?.message ?? "Please try again.",
+        title: isDuplicate ? "You're already on the waitlist" : "Could not join waitlist",
+        description: isDuplicate ? "We found this email in our list already." : message,
       });
     } finally {
       setIsSubmitting(false);
