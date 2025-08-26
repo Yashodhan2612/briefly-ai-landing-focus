@@ -39,10 +39,20 @@ const Hero = () => {
               
               <Button 
                 size="lg"
-                className="bg-gradient-primary hover:shadow-glow transition-smooth text-lg px-8 py-6 animate-fade-in-up animate-delay-200"
+                className="bg-gradient-primary cta-breathe cta-magnetic cta-shimmer text-lg px-8 py-6 animate-fade-in-up animate-delay-200 font-semibold border-0 relative group"
                 onClick={scrollToWaitlist}
               >
-                Join the Private Beta
+                <span className="relative z-10 flex items-center gap-2">
+                  Join the Private Beta
+                  <svg 
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
               </Button>
             </div>
             
