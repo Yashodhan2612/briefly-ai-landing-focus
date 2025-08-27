@@ -38,9 +38,21 @@ const Hero = () => {
                 In {" "}
                 <span className="relative inline-block">
                   Slack
-                  <span aria-hidden className="pointer-events-none absolute left-0 right-0 -bottom-2">
-                    <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg" className="w-full h-5">
-                      <path d="M2 12 C 20 2, 40 18, 60 8 S 100 18, 120 8 160 18, 198 8" fill="none" strokeWidth="4" strokeLinecap="round" stroke="hsl(var(--ring))"/>
+                  <span aria-hidden className="pointer-events-none absolute left-0 right-0 -bottom-3">
+                    <svg viewBox="0 0 200 28" xmlns="http://www.w3.org/2000/svg" className="w-full h-6">
+                      <defs>
+                        <filter id="squiggle-glow" x="-20%" y="-50%" width="140%" height="200%">
+                          <feGaussianBlur stdDeviation="3" result="blur" />
+                          <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                          </feMerge>
+                        </filter>
+                      </defs>
+                      {/* Soft glow */}
+                      <path d="M2 18 C 60 10, 140 24, 198 18" fill="none" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" stroke="hsl(var(--ring) / 0.35)" filter="url(#squiggle-glow)" />
+                      {/* Crisp line */}
+                      <path d="M2 18 C 60 10, 140 24, 198 18" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" stroke="hsl(var(--ring))" />
                     </svg>
                   </span>
                 </span>
