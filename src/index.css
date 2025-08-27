@@ -253,6 +253,47 @@ All colors MUST be HSL.
   }
 }
 
+/* Obvious, modern data-stream visuals */
+@layer utilities {
+  .data-stream-line {
+    position: relative;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--ring) / 0.15) 0%, hsl(var(--ring) / 0.6) 50%, hsl(var(--ring) / 0.15) 100%);
+    overflow: hidden;
+    border-radius: 9999px;
+  }
+
+  .data-stream-glow::before {
+    content: "";
+    position: absolute;
+    inset: -6px -20%;
+    background: radial-gradient(closest-side, hsl(var(--ring) / 0.35), transparent 70%);
+    filter: blur(6px);
+    opacity: 0.6;
+  }
+
+  .particle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 9999px;
+    background: linear-gradient(90deg, white, hsl(var(--ring)));
+    box-shadow: 0 0 10px hsl(var(--ring) / 0.7);
+  }
+
+  .particle--sm { width: 6px; height: 6px; }
+  .particle--md { width: 8px; height: 8px; }
+  .particle--lg { width: 10px; height: 10px; }
+
+  .animate-flow-strong-ltr { animation: flow-strong-ltr 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+  .animate-flow-strong-ltr-delay { animation: flow-strong-ltr 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.2s; }
+  .animate-flow-strong-ltr-delay-2 { animation: flow-strong-ltr 2s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.4s; }
+
+  .animate-flow-strong-rtl { animation: flow-strong-rtl 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+  .animate-flow-strong-rtl-delay { animation: flow-strong-rtl 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.2s; }
+  .animate-flow-strong-rtl-delay-2 { animation: flow-strong-rtl 2s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.4s; }
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -352,6 +393,41 @@ All colors MUST be HSL.
   50% {
     opacity: 1;
     box-shadow: 0 0 16px hsl(var(--ring) / 0.6);
+  }
+}
+
+/* Stronger flowing motion for particles */
+@keyframes flow-strong-ltr {
+  0% {
+    left: 0%;
+    transform: translateY(-50%) scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 16px hsl(var(--ring) / 0.9);
+  }
+  100% {
+    left: 100%;
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+@keyframes flow-strong-rtl {
+  0% {
+    right: 0%;
+    transform: translateY(-50%) scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 16px hsl(var(--ring) / 0.9);
+  }
+  100% {
+    right: 100%;
+    transform: translate(50%, -50%) scale(1.05);
+    opacity: 0.7;
   }
 }
 

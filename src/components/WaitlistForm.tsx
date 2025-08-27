@@ -10,6 +10,7 @@ type WaitlistInsert = Database["public"]["Tables"]["waitlist_submissions"]["Inse
 
 const WaitlistForm = () => {
   const [formData, setFormData] = useState({
+    id: "",
     name: "",
     email: "",
     phone: "",
@@ -44,7 +45,7 @@ const WaitlistForm = () => {
         title: "Welcome to the waitlist! 🎉",
         description: "We'll be in touch soon with early access details.",
       });
-      setFormData({ name: "", email: "", phone: "", company: "" });
+      setFormData({ id: "", name: "", email: "", phone: "", company: "" });
     } catch (err: any) {
       const code = err?.code as string | undefined;
       const message = (err?.message as string | undefined) || "Please try again.";
