@@ -29,15 +29,16 @@ const Hero = () => {
           {/* Centered hero content without mockup and without underline */}
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">
-              Work updates.
+              Every
               {" "}
-              <span className="text-gradient">Clear.</span>{" "}
-              <span className="text-gradient">Fast.</span>{" "}
-              In Slack.
+              <span className="text-gradient">Blocker</span>{" "}
+              <span className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">Costs</span>{" "}
+              <span className="text-gradient">Revenue.</span>{" "}
+              We find them first.
             </h1>
 
             <p className="text-xl lg:text-2xl text-muted-foreground mb-10 leading-relaxed animate-fade-in-up animate-delay-100">
-              Automate status updates, surface blockers, and keep everyone aligned without wasting hours in meetings.
+            Briefly.ai auto-detects risks from Jira, GitHub, and Confluence and delivers real-time status updates in Slack — turning wasted hours into faster releases.
             </p>
 
             <div className="flex items-center justify-center gap-4 animate-fade-in-up animate-delay-200">
