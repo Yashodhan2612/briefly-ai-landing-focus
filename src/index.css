@@ -241,6 +241,16 @@ All colors MUST be HSL.
     animation: data-arrival 2s ease-in-out infinite;
     opacity: 0;
   }
+
+  /* Brand helpers */
+  .bg-brand {
+    background-color: hsl(var(--ring));
+  }
+
+  /* Blinking purple indicator for ticker dot */
+  .blink-purple {
+    animation: blink-purple 1.2s ease-in-out infinite;
+  }
 }
 
 @keyframes float {
@@ -330,6 +340,18 @@ All colors MUST be HSL.
   }
   100% {
     opacity: 0;
+  }
+}
+
+/* Blinking effect using brand purple */
+@keyframes blink-purple {
+  0%, 100% {
+    opacity: 0.35;
+    box-shadow: 0 0 8px hsl(var(--ring) / 0.25);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 16px hsl(var(--ring) / 0.6);
   }
 }
 

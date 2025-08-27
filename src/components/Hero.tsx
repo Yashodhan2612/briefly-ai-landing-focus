@@ -20,7 +20,7 @@ const Hero = () => {
           <div className="mb-16 lg:mb-20">
             <div className="mx-auto w-fit mb-6 animate-fade-in-up">
               <span className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs lg:text-sm bg-gradient-subtle text-foreground shadow-subtle ring-1 ring-border">
-                <span className="h-2 w-2 rounded-full bg-primary-foreground" style={{boxShadow: '0 0 12px hsl(var(--ring))'}} />
+                <span className="h-2 w-2 rounded-full bg-brand blink-purple" />
                 <span className="opacity-80">Supercharge your workflow with</span>
                 <span className="font-medium">Briefly.ai</span>
               </span>
