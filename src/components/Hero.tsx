@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import dashboardMockup from "@/assets/dashboard-mockup.jpg";
+// Removed hero image to focus on central messaging
 import PlatformLogos from "@/components/PlatformLogos";
 
 const Hero = () => {
@@ -28,9 +28,8 @@ const Hero = () => {
             <PlatformLogos />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left content */}
-            <div className="text-left">
+          {/* Centered hero content without mockup */}
+          <div className="max-w-3xl mx-auto text-center">
               <h1 className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">
                 Work updates.
                 {" "}
@@ -43,7 +42,7 @@ const Hero = () => {
                 Automate status updates, surface blockers, and keep everyone aligned without wasting hours in meetings.
               </p>
               
-              <div className="flex items-center gap-4 animate-fade-in-up animate-delay-200">
+              <div className="flex items-center justify-center gap-4 animate-fade-in-up animate-delay-200">
                 <Button 
                   size="lg"
                   className="bg-gradient-primary hover:shadow-glow transition-smooth text-lg px-8 py-6"
@@ -53,19 +52,6 @@ const Hero = () => {
                 </Button>
                 <span className="text-sm text-muted-foreground">No spam • 1-minute setup</span>
               </div>
-            </div>
-            
-            {/* Right mockup */}
-            <div className="relative lg:block hidden">
-              <div className="relative animate-float">
-                <img 
-                  src={dashboardMockup} 
-                  alt="Briefly.ai dashboard showing automated status updates and team insights" 
-                  className="w-full max-w-lg mx-auto rounded-2xl shadow-large"
-                />
-                <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-2xl" />
-              </div>
-            </div>
           </div>
         </div>
       </div>
