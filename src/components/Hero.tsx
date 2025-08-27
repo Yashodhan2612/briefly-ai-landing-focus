@@ -31,8 +31,8 @@ const Hero = () => {
             <h1 className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">
               Every
               {" "}
-              <span className="text-gradient">Blocker</span>{" "}
-              <span className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">Costs</span>{" "}
+              <span className="text-gradient">Blockers</span>{" "}
+              <span className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">Cost</span>{" "}
               <span className="text-gradient">Revenue.</span>{" "}
               We find them first.
             </h1>
