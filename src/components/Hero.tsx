@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 import PlatformLogos from "@/components/PlatformLogos";
 
 const Hero = () => {
@@ -27,44 +26,29 @@ const Hero = () => {
             </div>
             <PlatformLogos />
           </div>
+          {/* Centered hero content without mockup and without underline */}
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">
+              Work updates.
+              {" "}
+              <span className="text-gradient">Clear.</span>{" "}
+              <span className="text-gradient">Fast.</span>{" "}
+              In Slack.
+            </h1>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left content */}
-            <div className="text-left">
-              <h1 className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">
-                Work updates.
-                {" "}
-                <span className="text-gradient">Clear.</span>{" "}
-                <span className="text-gradient">Fast.</span>{" "}
-                In Slack.
-              </h1>
-              
-              <p className="text-xl lg:text-2xl text-muted-foreground mb-10 leading-relaxed animate-fade-in-up animate-delay-100">
-                Automate status updates, surface blockers, and keep everyone aligned without wasting hours in meetings.
-              </p>
-              
-              <div className="flex items-center gap-4 animate-fade-in-up animate-delay-200">
-                <Button 
-                  size="lg"
-                  className="bg-gradient-primary hover:shadow-glow transition-smooth text-lg px-8 py-6"
-                  onClick={scrollToWaitlist}
-                >
-                  Join the Private Beta
-                </Button>
-                <span className="text-sm text-muted-foreground">No spam • 1-minute setup</span>
-              </div>
-            </div>
-            
-            {/* Right mockup */}
-            <div className="relative lg:block hidden">
-              <div className="relative animate-float">
-                <img 
-                  src={dashboardMockup} 
-                  alt="Briefly.ai dashboard showing automated status updates and team insights" 
-                  className="w-full max-w-lg mx-auto rounded-2xl shadow-large"
-                />
-                <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-2xl" />
-              </div>
+            <p className="text-xl lg:text-2xl text-muted-foreground mb-10 leading-relaxed animate-fade-in-up animate-delay-100">
+              Automate status updates, surface blockers, and keep everyone aligned without wasting hours in meetings.
+            </p>
+
+            <div className="flex items-center justify-center gap-4 animate-fade-in-up animate-delay-200">
+              <Button 
+                size="lg"
+                className="bg-gradient-primary hover:shadow-glow transition-smooth text-lg px-8 py-6"
+                onClick={scrollToWaitlist}
+              >
+                Join the Private Beta
+              </Button>
+              <span className="text-sm text-muted-foreground">No spam • 1-minute setup</span>
             </div>
           </div>
         </div>
