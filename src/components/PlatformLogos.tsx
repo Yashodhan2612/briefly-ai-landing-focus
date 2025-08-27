@@ -17,7 +17,7 @@ const PlatformLogos = () => {
       </div>
 
       {/* Connection line 1 with stronger flowing data */}
-      <div className="flex-1 data-stream-line data-stream-glow">
+      <div className="w-24 lg:flex-1 data-stream-line data-stream-glow">
         {/* Flowing particles */}
         <div className="particle particle--lg left-0 animate-flow-strong-ltr"></div>
         <div className="particle particle--md left-0 animate-flow-strong-ltr-delay"></div>
@@ -42,7 +42,7 @@ const PlatformLogos = () => {
       </div>
 
       {/* Connection line 2 with stronger flowing data (reverse) */}
-      <div className="flex-1 data-stream-line data-stream-glow">
+      <div className="w-24 lg:flex-1 data-stream-line data-stream-glow">
         <div className="particle particle--lg right-0 animate-flow-strong-rtl"></div>
         <div className="particle particle--md right-0 animate-flow-strong-rtl-delay"></div>
         <div className="particle particle--sm right-0 animate-flow-strong-rtl-delay-2"></div>
