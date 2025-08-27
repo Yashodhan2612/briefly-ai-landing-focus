@@ -13,11 +13,11 @@ const Hero = () => {
       <div className="pointer-events-none absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full blur-3xl opacity-30" style={{background: 'radial-gradient(closest-side, hsl(250 84% 70% / 0.35), transparent)'}} />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 py-20">
+      <div className="relative z-10 container mx-auto px-6 py-12">
         <div className="max-w-7xl mx-auto">
           {/* Platform integration showcase */}
-          <div className="mb-16 lg:mb-20">
-            <div className="mx-auto w-fit mb-6 animate-fade-in-up">
+          <div className="mb-8 lg:mb-12">
+            <div className="mx-auto w-fit mb-4 animate-fade-in-up">
               <span className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs lg:text-sm bg-gradient-subtle text-foreground shadow-subtle ring-1 ring-border">
                 <span className="h-2 w-2 rounded-full bg-brand blink-purple" />
                 <span className="opacity-80">Supercharge your workflow with</span>
@@ -28,16 +28,16 @@ const Hero = () => {
           </div>
           {/* Centered hero content without mockup and without underline */}
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">
+            <h1 className="font-display text-4xl lg:text-6xl font-semibold leading-tight mb-4 tracking-tight animate-fade-in-up">
               Every
               {" "}
               <span className="text-gradient">Blockers</span>{" "}
-              <span className="font-display text-5xl lg:text-7xl font-semibold leading-tight mb-6 tracking-tight animate-fade-in-up">Cost</span>{" "}
+              <span className="font-display text-4xl lg:text-6xl font-semibold leading-tight mb-4 tracking-tight animate-fade-in-up">Cost</span>{" "}
               <span className="text-gradient">Revenue.</span>{" "}
               We find them first.
             </h1>
 
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-10 leading-relaxed animate-fade-in-up animate-delay-100">
+            <p className="text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up animate-delay-100">
             Briefly.ai auto-detects risks from Jira, GitHub, and Confluence and delivers real-time status updates in Slack — turning wasted hours into faster releases.
             </p>
 
