@@ -16,13 +16,12 @@ const PlatformLogos = () => {
         </div>
       </div>
 
-      {/* Connection line 1 with flowing data */}
-      <div className="flex-1 h-0.5 bg-gradient-to-r from-primary/30 to-primary/60 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/60"></div>
-        {/* Flowing data bits */}
-        <div className="absolute top-1/2 left-0 w-2 h-2 bg-primary rounded-full animate-flow-to-center transform -translate-y-1/2"></div>
-        <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-primary/70 rounded-full animate-flow-to-center-delay transform -translate-y-1/2"></div>
-        <div className="absolute top-1/2 left-0 w-1 h-1 bg-primary/50 rounded-full animate-flow-to-center-delay-2 transform -translate-y-1/2"></div>
+      {/* Connection line 1 with stronger flowing data */}
+      <div className="flex-1 data-stream-line data-stream-glow">
+        {/* Flowing particles */}
+        <div className="particle particle--lg left-0 animate-flow-strong-ltr"></div>
+        <div className="particle particle--md left-0 animate-flow-strong-ltr-delay"></div>
+        <div className="particle particle--sm left-0 animate-flow-strong-ltr-delay-2"></div>
       </div>
 
       {/* Slack - Central Hub with data pulse animation */}
@@ -42,13 +41,11 @@ const PlatformLogos = () => {
         <div className="absolute inset-0 rounded-2xl bg-primary/20 animate-data-arrival"></div>
       </div>
 
-      {/* Connection line 2 with flowing data */}
-      <div className="flex-1 h-0.5 bg-gradient-to-l from-primary/30 to-primary/60 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-l from-primary/30 to-primary/60"></div>
-        {/* Flowing data bits (right to left) */}
-        <div className="absolute top-1/2 right-0 w-2 h-2 bg-primary rounded-full animate-flow-to-center-reverse transform -translate-y-1/2"></div>
-        <div className="absolute top-1/2 right-0 w-1.5 h-1.5 bg-primary/70 rounded-full animate-flow-to-center-reverse-delay transform -translate-y-1/2"></div>
-        <div className="absolute top-1/2 right-0 w-1 h-1 bg-primary/50 rounded-full animate-flow-to-center-reverse-delay-2 transform -translate-y-1/2"></div>
+      {/* Connection line 2 with stronger flowing data (reverse) */}
+      <div className="flex-1 data-stream-line data-stream-glow">
+        <div className="particle particle--lg right-0 animate-flow-strong-rtl"></div>
+        <div className="particle particle--md right-0 animate-flow-strong-rtl-delay"></div>
+        <div className="particle particle--sm right-0 animate-flow-strong-rtl-delay-2"></div>
       </div>
 
       {/* Confluence */}
