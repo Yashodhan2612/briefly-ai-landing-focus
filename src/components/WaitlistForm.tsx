@@ -19,9 +19,41 @@ const WaitlistForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  //calls backend api to submit the form responses
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+  
+    try {
+      const response = await fetch("http://127.0.0.1:8080/waitlist-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await response.json();
+      if (result.success) {
+        toast({
+          title: "Welcome to the waitlist! 🎉",
+          description: "We'll be in touch soon with early access details.",
+        });
+        setFormData({ id: "", name: "", email: "", phone: "", company: "" });
+      } else {
+        throw new Error(result.error || "Unknown error");
+      }
+    } catch (err: any) {
+      toast({
+        title: "Could not join waitlist",
+        description: err?.message ?? "Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   //Handles submissions to the waitlist
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  /*const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -58,7 +90,7 @@ const WaitlistForm = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }; */ //Commented out this code which handles the frontend submission to waitlist form directly (Less-secure way)
 
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
