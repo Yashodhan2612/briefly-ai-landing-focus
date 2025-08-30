@@ -19,41 +19,9 @@ const WaitlistForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  //calls backend api to submit the form responses
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-  
-    try {
-      const response = await fetch("https://briefly-ai-landing-backend-production.up.railway.app/waitlist-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-  
-      const result = await response.json();
-      if (result.success) {
-        toast({
-          title: "Welcome to the waitlist! 🎉",
-          description: "We'll be in touch soon with early access details.",
-        });
-        setFormData({ id: "", name: "", email: "", phone: "", company: "" });
-      } else {
-        throw new Error(result.error || "Unknown error");
-      }
-    } catch (err: any) {
-      toast({
-        title: "Could not join waitlist",
-        description: err?.message ?? "Please try again.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   //Handles submissions to the waitlist
 
-  /*const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -81,7 +49,7 @@ const WaitlistForm = () => {
     } catch (err: any) {
       const code = err?.code as string | undefined;
       const message = (err?.message as string | undefined) || "Please try again.";
-      const isDuplicate = code === "23505" || /duplicate key|unique/i.test(message);
+      const isDuplicate = code === "23505" || /duplicate|unique/i.test(message);
 
       toast({
         title: isDuplicate ? "You're already on the waitlist" : "Could not join waitlist",
@@ -90,7 +58,7 @@ const WaitlistForm = () => {
     } finally {
       setIsSubmitting(false);
     }
-  }; */ //Commented out this code which handles the frontend submission to waitlist form directly (Less-secure way)
+  };
 
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
