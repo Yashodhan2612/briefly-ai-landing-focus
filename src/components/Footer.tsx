@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
         
         {/* Decorative elements */}
-        <div className="mt-4 flex items-center justify-center gap-8 opacity-40">
+        <div className="mt-2 flex items-center justify-center gap-8 opacity-40">
           <div className="w-16 h-px bg-gradient-to-r from-transparent to-border" />
           <div className="w-2 h-2 rounded-full bg-primary/20" />
           <div className="w-16 h-px bg-gradient-to-l from-transparent to-border" />
